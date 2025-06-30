@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "27362fb0-05c0-4df5-b735-e954de2f33e3",
+		"name": "GitHub API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46069337"
+	},
+	"item": [
+		{
+			"name": "Searche Repositories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AUTH_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/search/repositories?q=language:python&sort=stars&order=desc",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"search",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "language:python"
+						},
+						{
+							"key": "sort",
+							"value": "stars"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Commits",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AUTH_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/repos/torvalds/linux/commits?per_page=5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"repos",
+						"torvalds",
+						"linux",
+						"commits"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File Contents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AUTH_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/repos/octocat/Hello-World/contents/README.md",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"repos",
+						"octocat",
+						"Hello-World",
+						"contents",
+						"README.md"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
